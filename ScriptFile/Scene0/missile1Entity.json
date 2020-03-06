@@ -1,0 +1,56 @@
+{
+    "Code": "missile1",
+    "type": "Entity",
+    "Position": {
+        "id": 0,
+        "value": [
+            -200,
+            -200
+        ]
+    },
+    "Sprite": {
+        "id": 12,
+        "value": "../PNG/Shots/Shot1/shot1_exp2.png"
+    },
+    "Drawable": {
+        "id": 2,
+        "value": true
+    },
+    "Velocity": {
+        "id": 1,
+        "value": 10
+    },
+    "Direction": {
+        "id": 4,
+        "value": 0
+    },
+    "Playable": {
+        "id": 8,
+        "value": false
+    },
+    "Team": {
+        "id": 18,
+        "value": true
+    },
+    "Sound": {
+        "id": 6,
+        "value": "../Audio/SoundLaserShotChara.ogg"
+    },
+    "Hitbox": {
+        "id": 19,
+        "value": [
+            5,
+            5,
+            5,
+            5
+        ]
+    },
+    "HeartPoint": {
+        "id": 3,
+        "value": 1
+    },
+    "PowerDamage": {
+        "id": 10,
+        "value": 1
+    }
+}

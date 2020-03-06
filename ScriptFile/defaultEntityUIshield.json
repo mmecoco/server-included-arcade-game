@@ -1,0 +1,20 @@
+{
+        "Code": "defaultUIShield",
+        "type": "Entity",
+
+        "Position": {
+            "id": 0,
+            "value": [
+                500,
+                1000
+            ]
+        },
+        "Drawable": {
+            "id": 2,
+            "value": true
+        },
+        "Sprite": {
+            "id": 12,
+            "value": "../PNG/Main_UI/Armor_Bar_Table.png"
+        }
+}

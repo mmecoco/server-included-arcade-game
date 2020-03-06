@@ -1,0 +1,78 @@
+#pragma once
+#include <iostream>
+#include "Application.hpp"
+#include "SystemFactory.hpp"
+#include "ComponentFactory.hpp"
+#include "EntitiesFactory.hpp"
+#include "DrawableComponent.hpp"
+#include "Script.hpp"
+#include "RenderSystem.hpp"
+#include "stock.hpp"
+#include "SendSystem.hpp"
+#include "ReceiveSystem.hpp"
+
+class Client : public Eligos::Application
+{
+public:
+  Client(std::vector<stock> data, std::string id)
+  {
+    // m_api.reset(new Eligos::SfmlRenderer());
+    // m_loadedScriptname.push_back({DEFAULT_BCK});
+    // m_loadedScriptname.push_back({DEFAULT_GAME});
+    // m_loadedScriptname.push_back({DEFAULT_UI_HEALTH});
+    // m_loadedScriptname[2].push_back(DEFAULT_UI_SHIELD);
+    try
+        {
+	  generateScene();
+	  
+	  //m_SceneStack[0]->init(m_loadedScriptname);
+	  
+	  // SystemBase *movesys = SystemFactory::Get()->CreateSystem("MOVE");
+	  // m_SceneStack[0]->addSystemLayer(movesys, 1);
+
+	  // RenderSystem *sys = (RenderSystem *)SystemFactory::Get()->CreateSystem("RENDERER");
+	  // RenderSystem *sys1 = (RenderSystem *)SystemFactory::Get()->CreateSystem("RENDERER");
+	  // RenderSystem *sys2 = (RenderSystem *)SystemFactory::Get()->CreateSystem("RENDERER");
+	  // sys->init(m_api);
+	  // sys1->init(m_api);
+	  // sys2->init(m_api);
+	  // m_SceneStack[0]->addSystemLayer(sys, 0);
+	  // m_SceneStack[0]->addSystemLayer(sys1, 1);
+	  // m_SceneStack[0]->addSystemLayer(sys2, 2);
+	  
+	  // SystemBase *graphPos = SystemFactory::Get()->CreateSystem("RENDERERPOS");
+	  // SystemBase *graphPos1 = SystemFactory::Get()->CreateSystem("RENDERERPOS");
+	  // SystemBase *graphPos2 = SystemFactory::Get()->CreateSystem("RENDERERPOS");
+	  
+ 	  // m_SceneStack[0]->addSystemLayer(graphPos, 0);
+	  // m_SceneStack[0]->addSystemLayer(graphPos1, 1);
+	  // m_SceneStack[0]->addSystemLayer(graphPos2, 2);
+	  
+	  SendSystem *sender_client = (SendSystem *)SystemFactory::Get()->CreateSystem("SEND");
+	  boost::asio::io_service io;
+	  int i = 0;
+	  while (id != data[i].id)
+	    i++;
+	  std::cout << "Creating sender from " << data[i].ip << ":" << data[i].port << std::endl;
+	  boost::asio::ip::udp::socket *target_socket = new boost::asio::ip::udp::socket(io, boost::asio::ip::udp::endpoint(boost::asio::ip::address::from_string(data[i].ip.c_str()), data[i].port));
+	  boost::asio::ip::udp::endpoint target_endpoint(boost::asio::ip::address::from_string(data[0].ip.c_str()), data[0].port);
+	  // sender and receiver takes a socket and and endpoint as init parameter
+	  
+	  sender_client->init(target_socket, target_endpoint);
+	  sender_client->dump();
+	  m_SceneStack[0]->addSystemLayer(sender_client, 0);
+	  
+	  ReceiveSystem *receiver_client = (ReceiveSystem *)SystemFactory::Get()->CreateSystem("RECEIVE");
+	  
+	  receiver_client->init(target_socket, target_endpoint);
+	  receiver_client->dump();
+	  m_SceneStack[0]->addSystemLayer(receiver_client, 0);
+        }
+    catch (const std::exception &e)
+      {
+	std::cerr << e.what() << '\n';
+	throw std::logic_error("Invalid Game configuration");
+      }
+  }
+  virtual ~Client() = default;
+};

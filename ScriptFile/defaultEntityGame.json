@@ -1,0 +1,65 @@
+{
+    "Code": "defaultGame",
+    "type": "Entity",
+
+    "Position": {
+        "id": 0,
+        "value": [
+            20,
+            540
+        ]
+    },
+    "Drawable": {
+        "id": 2,
+        "value": true
+    },
+    "Velocity": {
+        "id": 1,
+        "value": 5
+    },
+    "Direction": {
+        "id": 4,
+        "value": 0
+    },
+    "Sprite": {
+        "id": 12,
+        "value": "../PNG/Ship6/Ship6.png"
+    },
+    "Playable": {
+        "id": 8,
+        "value": true
+    },
+    "Input": {
+        "id": 7,
+        "value": 0
+    },
+    "Team": {
+        "id": 18,
+        "value": true
+    },
+    "Hitbox": {
+        "id": 19,
+        "value": [
+            64,
+            64,
+            64,
+            64
+        ]
+    },
+    "HeartPoint": {
+        "id": 3,
+        "value": 1
+    },
+    "PowerDamage": {
+        "id": 10,
+        "value": 1
+    },
+    "Bonus": {
+        "id": 5,
+        "value": false
+    },
+    "ShootRate": {
+        "id" : 16,
+        "value": 200
+    }
+}

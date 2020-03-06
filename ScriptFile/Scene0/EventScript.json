@@ -1,0 +1,20 @@
+{
+    "type": "Script",
+    "Code": "TestEvent",
+        
+    "Event": {
+        "Timer": 5000,
+        "Entity": {
+            "Code": "en1",
+            "Number": 5,
+            "Position": [
+                [1900,100],
+                [1900,300],
+                [1900,500],
+                [1900,700],
+                [1900,900]
+            ],
+            "Sprite": "../PNG/Meteors/Meteor_01.png"
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "Code": "defaultBck",
+    "type": "Entity",
+
+    "Position": {
+        "id": 0,
+        "value": [
+            0,
+            0
+        ]
+    },
+    "Drawable": {
+        "id": 2,
+        "value": true 
+    },
+    "Sprite": {
+        "id": 12,
+        "value": "../PNG/Nebula Blue.png"
+    },
+    "Sprite2": {
+        "id": 12,
+        "value": "../PNG/Stars-Big_1_1_PC.png"
+    }
+}

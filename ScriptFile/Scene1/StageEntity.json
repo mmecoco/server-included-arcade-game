@@ -1,0 +1,20 @@
+{
+    "Code": "StageEntity",
+    "type": "Entity",
+
+    "Position": {
+        "id": 0,
+        "value": [
+            0,
+            0
+        ]
+    },
+    "Drawable": {
+        "id": 2,
+        "value": true 
+    },
+    "Sprite": {
+        "id": 12,
+        "value": "../PNG/Nebula Red.png"
+    }
+}

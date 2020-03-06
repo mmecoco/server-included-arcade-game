@@ -1,0 +1,20 @@
+{
+        "Code": "defaultUIhealth",
+        "type": "Entity",
+
+        "Position": {
+            "id": 0,
+            "value": [
+                900,
+                1000
+            ]
+        },
+        "Drawable": {
+            "id": 2,
+            "value": true
+        },
+        "Sprite": {
+            "id": 12,
+            "value": "../PNG/Main_UI/Health_Bar_Table.png"
+        }
+}

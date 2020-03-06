@@ -1,0 +1,12 @@
+{
+    "Code": "Alpha1",
+    "type": "Entity",
+
+    "Position": {
+        "id": 0,
+        "value": [
+            0,
+            0
+        ]
+    }
+}
